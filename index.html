@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>商务中文核心词表 · Business Chinese Core Vocabulary</title>
+<meta name="description" content="商务中文核心词表：10 个板块的中英对照术语，含拼音，可搜索、可翻卡、可打印。Building blocks for Business Chinese learners.">
+<style>
+  :root{
+    --bg:#f7f7f5; --panel:#ffffff; --ink:#1c1c1e; --ink2:#5a5a60; --ink3:#8e8e93;
+    --line:#e4e4e1; --accent:#0f766e; --accent-soft:#e6f2f0; --danger:#b45309;
+    --radius:12px;
+    --font:"Segoe UI","PingFang SC","Microsoft YaHei",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141416; --panel:#1c1c1f; --ink:#f2f2f4; --ink2:#b6b6bd; --ink3:#8a8a92;
+           --line:#2c2c31; --accent:#4fd1c5; --accent-soft:#1b2f2d; --danger:#fbbf24; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:980px;margin:0 auto;padding:28px 20px 72px}
+
+  header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:20px}
+  h1{font-size:28px;margin:0 0 6px;letter-spacing:.5px}
+  .sub{color:var(--ink2);font-size:14px;margin:0}
+  .sub b{color:var(--accent);font-weight:600}
+
+  .bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+  #q{flex:1 1 240px;min-width:200px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;
+     background:var(--panel);color:var(--ink);font-size:15px;font-family:inherit;outline:none}
+  #q:focus{border-color:var(--accent)}
+  .modes{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel)}
+  .modes button{border:0;background:transparent;color:var(--ink2);padding:10px 16px;font-size:14px;
+                font-family:inherit;cursor:pointer}
+  .modes button.on{background:var(--accent);color:#fff}
+  .btn{border:1px solid var(--line);background:var(--panel);color:var(--ink2);border-radius:10px;
+       padding:10px 14px;font-size:14px;font-family:inherit;cursor:pointer}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+
+  #chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+  .chip{border:1px solid var(--line);background:var(--panel);color:var(--ink2);border-radius:999px;
+        padding:5px 13px;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap}
+  .chip.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:600}
+
+  .count{color:var(--ink3);font-size:13px;margin:0 0 10px}
+
+  /* 列表 */
+  table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);
+        border-radius:var(--radius);overflow:hidden}
+  thead th{text-align:left;font-size:12px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink3);
+           font-weight:600;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--bg)}
+  tbody td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:var(--accent-soft)}
+  .zh{font-size:17px;font-weight:600;white-space:nowrap}
+  .py{color:var(--accent);font-size:14px;white-space:nowrap}
+  .en{color:var(--ink2);font-size:14px}
+  .cat{color:var(--ink3);font-size:12px;white-space:nowrap}
+  .grp td{background:var(--bg);color:var(--ink);font-weight:600;font-size:14px;padding:9px 14px;
+          border-bottom:1px solid var(--line)}
+
+  /* 词卡 */
+  .cardwrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+  .card{width:100%;max-width:440px;aspect-ratio:3/2;perspective:1200px;cursor:pointer}
+  .inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+  .card.flip .inner{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;
+        align-items:center;justify-content:center;border-radius:16px;border:1px solid var(--line);
+        background:var(--panel);padding:24px;text-align:center}
+  .face.back{transform:rotateY(180deg)}
+  .face .big{font-size:44px;font-weight:700;letter-spacing:4px}
+  .face .hint{position:absolute;bottom:14px;color:var(--ink3);font-size:12px}
+  .face .pybig{font-size:22px;color:var(--accent);margin-bottom:10px}
+  .face .enbig{font-size:20px;color:var(--ink);margin-bottom:12px}
+  .face .zhsm{font-size:16px;color:var(--ink2)}
+  .nav{display:flex;gap:10px;align-items:center}
+  .nav .idx{color:var(--ink3);font-size:13px;min-width:74px;text-align:center}
+
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);
+         color:var(--ink3);font-size:12.5px;line-height:1.8}
+  footer a{color:var(--accent)}
+  .empty{color:var(--ink3);padding:40px;text-align:center;border:1px dashed var(--line);border-radius:var(--radius)}
+
+  @media print{
+    body{background:#fff;color:#000}
+    .bar,#chips,.modes,.btn,nav,.nav{display:none !important}
+    .cardwrap{display:none !important}
+    .wrap{max-width:100%;padding:0}
+    table{border-color:#999}
+    tbody tr:hover{background:transparent}
+    .zh{font-size:15px} thead th{background:#fff}
+    .grp td{background:#f2f2f2}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>商务中文核心词表</h1>
+    <p class="sub">Business Chinese Core Vocabulary ｜ <b id="total">—</b> 条术语 · <b id="cats">—</b> 个板块 ｜ 中英对照 · 汉字 · 拼音</p>
+  </header>
+
+  <div class="bar">
+    <input id="q" placeholder="搜索汉字、拼音或英文…" autocomplete="off">
+    <div class="modes">
+      <button data-m="list" class="on">词表</button>
+      <button data-m="card">词卡</button>
+    </div>
+    <button class="btn" id="print">打印</button>
+  </div>
+
+  <div id="chips"></div>
+  <p class="count" id="count"></p>
+  <main id="out"></main>
+
+  <footer>
+    <div>词表与英文释义为原创编纂 ｜ 拼音由 <a href="https://github.com/zh-lx/pinyin-pro" target="_blank" rel="noopener">pinyin-pro</a>（MIT）生成</div>
+    <div>本页为单文件静态页面，无后端、无追踪、无外部依赖；可直接保存或打印。</div>
+    <div>内容许可 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> ｜ 页面代码许可 MIT</div>
+  </footer>
+</div>
+
+<script>
+const TERMS = [{"z":"银行","p":"yín háng","e":"bank","c":0},{"z":"商业银行","p":"shāng yè yín háng","e":"commercial bank","c":0},{"z":"中央银行","p":"zhōng yāng yín háng","e":"central bank","c":0},{"z":"分行","p":"fēn háng","e":"branch (of a bank)","c":0},{"z":"支行","p":"zhī háng","e":"sub-branch","c":0},{"z":"开户","p":"kāi hù","e":"open an account","c":0},{"z":"账户","p":"zhàng hù","e":"account","c":0},{"z":"储蓄账户","p":"chǔ xù zhàng hù","e":"savings account","c":0},{"z":"活期存款","p":"huó qī cún kuǎn","e":"demand deposit","c":0},{"z":"定期存款","p":"dìng qī cún kuǎn","e":"time deposit","c":0},{"z":"存折","p":"cún zhé","e":"passbook","c":0},{"z":"银行卡","p":"yín háng kǎ","e":"bank card","c":0},{"z":"借记卡","p":"jiè jì kǎ","e":"debit card","c":0},{"z":"信用卡","p":"xìn yòng kǎ","e":"credit card","c":0},{"z":"对账单","p":"duì zhàng dān","e":"account statement","c":0},{"z":"余额","p":"yú é","e":"balance","c":0},{"z":"挂失","p":"guà shī","e":"report a card lost","c":0},{"z":"销户","p":"xiāo hù","e":"close an account","c":0},{"z":"网上银行","p":"wǎng shàng yín háng","e":"online banking","c":0},{"z":"手机银行","p":"shǒu jī yín háng","e":"mobile banking","c":0},{"z":"柜员","p":"guì yuán","e":"bank teller","c":0},{"z":"大堂经理","p":"dà táng jīng lǐ","e":"lobby manager","c":0},{"z":"客服","p":"kè fú","e":"customer service","c":0},{"z":"取号","p":"qǔ hào","e":"take a queue number","c":0},{"z":"身份证","p":"shēn fèn zhèng","e":"ID card","c":0},{"z":"营业执照","p":"yíng yè zhí zhào","e":"business licence","c":0},{"z":"对公账户","p":"duì gōng zhàng hù","e":"corporate account","c":0},{"z":"个人账户","p":"gè rén zhàng hù","e":"personal account","c":0},{"z":"联名账户","p":"lián míng zhàng hù","e":"joint account","c":0},{"z":"外币账户","p":"wài bì zhàng hù","e":"foreign currency account","c":0},{"z":"支付","p":"zhī fù","e":"payment","c":1},{"z":"付款","p":"fù kuǎn","e":"to pay","c":1},{"z":"收款","p":"shōu kuǎn","e":"to receive payment","c":1},{"z":"转账","p":"zhuǎn zhàng","e":"bank transfer","c":1},{"z":"汇款","p":"huì kuǎn","e":"remittance","c":1},{"z":"电汇","p":"diàn huì","e":"telegraphic transfer","c":1},{"z":"信汇","p":"xìn huì","e":"mail transfer","c":1},{"z":"票汇","p":"piào huì","e":"demand draft","c":1},{"z":"结算","p":"jié suàn","e":"settlement","c":1},{"z":"清算","p":"qīng suàn","e":"clearing","c":1},{"z":"净额结算","p":"jìng é jié suàn","e":"net settlement","c":1},{"z":"手续费","p":"shǒu xù fèi","e":"service charge","c":1},{"z":"支票","p":"zhī piào","e":"cheque","c":1},{"z":"现金支票","p":"xiàn jīn zhī piào","e":"cash cheque","c":1},{"z":"转账支票","p":"zhuǎn zhàng zhī piào","e":"transfer cheque","c":1},{"z":"汇票","p":"huì piào","e":"bill of exchange","c":1},{"z":"银行汇票","p":"yín háng huì piào","e":"bank draft","c":1},{"z":"承兑汇票","p":"chéng duì huì piào","e":"acceptance bill","c":1},{"z":"银行承兑汇票","p":"yín háng chéng duì huì piào","e":"bank acceptance bill","c":1},{"z":"本票","p":"běn piào","e":"promissory note","c":1},{"z":"票据","p":"piào jù","e":"bill; note","c":1},{"z":"托收","p":"tuō shōu","e":"collection","c":1},{"z":"信用证","p":"xìn yòng zhèng","e":"letter of credit","c":1},{"z":"保函","p":"bǎo hán","e":"letter of guarantee","c":1},{"z":"保理","p":"bǎo lǐ","e":"factoring","c":1},{"z":"跨境支付","p":"kuà jìng zhī fù","e":"cross-border payment","c":1},{"z":"第三方支付","p":"dì sān fāng zhī fù","e":"third-party payment","c":1},{"z":"扫码支付","p":"sǎo mǎ zhī fù","e":"QR code payment","c":1},{"z":"电子钱包","p":"diàn zǐ qián bāo","e":"e-wallet","c":1},{"z":"到账","p":"dào zhàng","e":"to be credited to an account","c":1},{"z":"存款","p":"cún kuǎn","e":"deposit","c":2},{"z":"取款","p":"qǔ kuǎn","e":"to withdraw","c":2},{"z":"贷款","p":"dài kuǎn","e":"loan","c":2},{"z":"借款","p":"jiè kuǎn","e":"to borrow; borrowing","c":2},{"z":"放款","p":"fàng kuǎn","e":"to lend; extend a loan","c":2},{"z":"还款","p":"huán kuǎn","e":"to repay a loan","c":2},{"z":"提前还款","p":"tí qián huán kuǎn","e":"early repayment","c":2},{"z":"抵押","p":"dǐ yā","e":"to mortgage; collateral","c":2},{"z":"质押","p":"zhì yā","e":"to pledge; pledge","c":2},{"z":"担保","p":"dān bǎo","e":"guarantee; to guarantee","c":2},{"z":"保证人","p":"bǎo zhèng rén","e":"guarantor","c":2},{"z":"信用贷款","p":"xìn yòng dài kuǎn","e":"unsecured loan","c":2},{"z":"抵押贷款","p":"dǐ yā dài kuǎn","e":"secured loan","c":2},{"z":"住房贷款","p":"zhù fáng dài kuǎn","e":"housing loan","c":2},{"z":"按揭","p":"àn jiē","e":"mortgage","c":2},{"z":"首付","p":"shǒu fù","e":"down payment","c":2},{"z":"分期付款","p":"fēn qī fù kuǎn","e":"instalment payment","c":2},{"z":"经营贷款","p":"jīng yíng dài kuǎn","e":"business loan","c":2},{"z":"流动资金贷款","p":"liú dòng zī jīn dài kuǎn","e":"working capital loan","c":2},{"z":"授信","p":"shòu xìn","e":"to grant credit; credit line","c":2},{"z":"额度","p":"é dù","e":"credit limit","c":2},{"z":"信用评级","p":"xìn yòng píng jí","e":"credit rating","c":2},{"z":"征信","p":"zhēng xìn","e":"credit report","c":2},{"z":"逾期","p":"yú qī","e":"overdue","c":2},{"z":"违约","p":"wéi yuē","e":"to default; default","c":2},{"z":"不良贷款","p":"bù liáng dài kuǎn","e":"non-performing loan","c":2},{"z":"呆账","p":"dāi zhàng","e":"bad debt","c":2},{"z":"催收","p":"cuī shōu","e":"debt collection","c":2},{"z":"展期","p":"zhǎn qī","e":"to extend the term; rollover","c":2},{"z":"审批","p":"shěn pī","e":"approval; to approve","c":2},{"z":"利率","p":"lì lǜ","e":"interest rate","c":3},{"z":"年利率","p":"nián lì lǜ","e":"annual interest rate","c":3},{"z":"基准利率","p":"jī zhǔn lì lǜ","e":"benchmark interest rate","c":3},{"z":"贷款市场报价利率","p":"dài kuǎn shì chǎng bào jià lì lǜ","e":"loan prime rate (LPR)","c":3},{"z":"存款准备金率","p":"cún kuǎn zhǔn bèi jīn lǜ","e":"reserve requirement ratio","c":3},{"z":"复利","p":"fù lì","e":"compound interest","c":3},{"z":"单利","p":"dān lì","e":"simple interest","c":3},{"z":"贴息","p":"tiē xī","e":"interest subsidy","c":3},{"z":"利率互换","p":"lì lǜ hù huàn","e":"interest rate swap","c":3},{"z":"汇率","p":"huì lǜ","e":"exchange rate","c":3},{"z":"升值","p":"shēng zhí","e":"to appreciate","c":3},{"z":"贬值","p":"biǎn zhí","e":"to depreciate","c":3},{"z":"浮动汇率","p":"fú dòng huì lǜ","e":"floating exchange rate","c":3},{"z":"中间价","p":"zhōng jiān jià","e":"central parity rate","c":3},{"z":"结汇","p":"jié huì","e":"to sell foreign exchange","c":3},{"z":"售汇","p":"shòu huì","e":"to sell foreign exchange (to a client)","c":3},{"z":"换汇","p":"huàn huì","e":"currency exchange","c":3},{"z":"外汇储备","p":"wài huì chǔ bèi","e":"foreign exchange reserves","c":3},{"z":"套期保值","p":"tào qī bǎo zhí","e":"hedging","c":3},{"z":"远期外汇","p":"yuǎn qī wài huì","e":"forward foreign exchange","c":3},{"z":"掉期","p":"diào qī","e":"swap","c":3},{"z":"升水","p":"shēng shuǐ","e":"premium","c":3},{"z":"贴水","p":"tiē shuǐ","e":"discount","c":3},{"z":"点差","p":"diǎn chā","e":"spread","c":3},{"z":"汇率风险","p":"huì lǜ fēng xiǎn","e":"exchange rate risk","c":3},{"z":"关税","p":"guān shuì","e":"tariff","c":3},{"z":"出口","p":"chū kǒu","e":"export","c":3},{"z":"进口","p":"jìn kǒu","e":"import","c":3},{"z":"证券","p":"zhèng quàn","e":"securities","c":4},{"z":"股票","p":"gǔ piào","e":"stock; share","c":4},{"z":"股份","p":"gǔ fèn","e":"share","c":4},{"z":"上市公司","p":"shàng shì gōng sī","e":"listed company","c":4},{"z":"上市","p":"shàng shì","e":"to go public; to list","c":4},{"z":"首次公开发行","p":"shǒu cì gōng kāi fā xíng","e":"initial public offering","c":4},{"z":"发行","p":"fā xíng","e":"to issue; issuance","c":4},{"z":"承销","p":"chéng xiāo","e":"to underwrite","c":4},{"z":"保荐","p":"bǎo jiàn","e":"to sponsor (a listing)","c":4},{"z":"招股说明书","p":"zhāo gǔ shuō míng shū","e":"prospectus","c":4},{"z":"上涨","p":"shàng zhǎng","e":"to rise","c":4},{"z":"下跌","p":"xià diē","e":"to fall","c":4},{"z":"涨停","p":"zhǎng tíng","e":"limit up","c":4},{"z":"跌停","p":"diē tíng","e":"limit down","c":4},{"z":"牛市","p":"niú shì","e":"bull market","c":4},{"z":"熊市","p":"xióng shì","e":"bear market","c":4},{"z":"成交量","p":"chéng jiāo liáng","e":"trading volume","c":4},{"z":"换手率","p":"huàn shǒu lǜ","e":"turnover rate","c":4},{"z":"市盈率","p":"shì yíng lǜ","e":"price-to-earnings ratio","c":4},{"z":"每股收益","p":"měi gǔ shōu yì","e":"earnings per share","c":4},{"z":"分红","p":"fēn hóng","e":"dividend; to pay a dividend","c":4},{"z":"除权","p":"chú quán","e":"ex-rights","c":4},{"z":"配股","p":"pèi gǔ","e":"rights issue","c":4},{"z":"增发","p":"zēng fā","e":"additional share issuance","c":4},{"z":"回购","p":"huí gòu","e":"buyback","c":4},{"z":"投资","p":"tóu zī","e":"investment; to invest","c":4},{"z":"投资者","p":"tóu zī zhě","e":"investor","c":4},{"z":"机构投资者","p":"jī gòu tóu zī zhě","e":"institutional investor","c":4},{"z":"散户","p":"sǎn hù","e":"retail investor","c":4},{"z":"投资组合","p":"tóu zī zǔ hé","e":"portfolio","c":4},{"z":"债券","p":"zhài quàn","e":"bond","c":5},{"z":"国债","p":"guó zhài","e":"government bond","c":5},{"z":"地方政府债","p":"dì fāng zhèng fǔ zhài","e":"local government bond","c":5},{"z":"企业债","p":"qǐ yè zhài","e":"corporate bond","c":5},{"z":"可转债","p":"kě zhuǎn zhài","e":"convertible bond","c":5},{"z":"短期融资券","p":"duǎn qī róng zī quàn","e":"short-term financing bond","c":5},{"z":"中期票据","p":"zhōng qī piào jù","e":"medium-term note","c":5},{"z":"到期日","p":"dào qī rì","e":"maturity date","c":5},{"z":"票面利率","p":"piào miàn lì lǜ","e":"coupon rate","c":5},{"z":"收益率","p":"shōu yì lǜ","e":"yield","c":5},{"z":"久期","p":"jiǔ qī","e":"duration","c":5},{"z":"信用利差","p":"xìn yòng lì chā","e":"credit spread","c":5},{"z":"信用等级","p":"xìn yòng děng jí","e":"credit rating","c":5},{"z":"基金","p":"jī jīn","e":"fund","c":5},{"z":"公募基金","p":"gōng mù jī jīn","e":"public fund","c":5},{"z":"私募基金","p":"sī mù jī jīn","e":"private fund","c":5},{"z":"货币市场基金","p":"huò bì shì chǎng jī jīn","e":"money market fund","c":5},{"z":"股票型基金","p":"gǔ piào xíng jī jīn","e":"equity fund","c":5},{"z":"债券型基金","p":"zhài quàn xíng jī jīn","e":"bond fund","c":5},{"z":"混合基金","p":"hùn hé jī jīn","e":"hybrid fund","c":5},{"z":"指数基金","p":"zhǐ shù jī jīn","e":"index fund","c":5},{"z":"基金净值","p":"jī jīn jìng zhí","e":"net asset value","c":5},{"z":"基金管理人","p":"jī jīn guǎn lǐ rén","e":"fund manager","c":5},{"z":"基金托管人","p":"jī jīn tuō guǎn rén","e":"fund custodian","c":5},{"z":"申购","p":"shēn gòu","e":"to subscribe","c":5},{"z":"赎回","p":"shú huí","e":"to redeem","c":5},{"z":"定投","p":"dìng tóu","e":"regular investment plan","c":5},{"z":"保险","p":"bǎo xiǎn","e":"insurance","c":6},{"z":"保险公司","p":"bǎo xiǎn gōng sī","e":"insurance company","c":6},{"z":"投保","p":"tóu bǎo","e":"to take out insurance","c":6},{"z":"保单","p":"bǎo dān","e":"insurance policy","c":6},{"z":"保费","p":"bǎo fèi","e":"premium","c":6},{"z":"保额","p":"bǎo é","e":"sum insured","c":6},{"z":"被保险人","p":"bèi bǎo xiǎn rén","e":"the insured","c":6},{"z":"受益人","p":"shòu yì rén","e":"beneficiary","c":6},{"z":"理赔","p":"lǐ péi","e":"claims settlement","c":6},{"z":"寿险","p":"shòu xiǎn","e":"life insurance","c":6},{"z":"财产保险","p":"cái chǎn bǎo xiǎn","e":"property insurance","c":6},{"z":"车险","p":"chē xiǎn","e":"motor insurance","c":6},{"z":"医疗险","p":"yī liáo xiǎn","e":"medical insurance","c":6},{"z":"意外险","p":"yì wài xiǎn","e":"accident insurance","c":6},{"z":"免赔额","p":"miǎn péi é","e":"deductible","c":6},{"z":"免责条款","p":"miǎn zé tiáo kuǎn","e":"exclusion clause","c":6},{"z":"风险评估","p":"fēng xiǎn píng gū","e":"risk assessment","c":6},{"z":"风险控制","p":"fēng xiǎn kòng zhì","e":"risk control","c":6},{"z":"风险管理","p":"fēng xiǎn guǎn lǐ","e":"risk management","c":6},{"z":"对冲","p":"duì chōng","e":"to hedge","c":6},{"z":"止损","p":"zhǐ sǔn","e":"stop loss","c":6},{"z":"杠杆","p":"gàng gǎn","e":"leverage","c":6},{"z":"流动性风险","p":"liú dòng xìng fēng xiǎn","e":"liquidity risk","c":6},{"z":"系统性风险","p":"xì tǒng xìng fēng xiǎn","e":"systemic risk","c":6},{"z":"财务","p":"cái wù","e":"finance; financial affairs","c":7},{"z":"会计","p":"kuài jì","e":"accounting","c":7},{"z":"审计","p":"shěn jì","e":"audit","c":7},{"z":"资产","p":"zī chǎn","e":"assets","c":7},{"z":"负债","p":"fù zhài","e":"liabilities","c":7},{"z":"所有者权益","p":"suǒ yǒu zhě quán yì","e":"owners' equity","c":7},{"z":"资产负债表","p":"zī chǎn fù zhài biǎo","e":"balance sheet","c":7},{"z":"利润表","p":"lì rùn biǎo","e":"income statement","c":7},{"z":"现金流量表","p":"xiàn jīn liú liàng biǎo","e":"cash flow statement","c":7},{"z":"营业收入","p":"yíng yè shōu rù","e":"operating revenue","c":7},{"z":"成本","p":"chéng běn","e":"cost","c":7},{"z":"费用","p":"fèi yòng","e":"expense","c":7},{"z":"利润","p":"lì rùn","e":"profit","c":7},{"z":"毛利","p":"máo lì","e":"gross profit","c":7},{"z":"净利润","p":"jìng lì rùn","e":"net profit","c":7},{"z":"营业利润","p":"yíng yè lì rùn","e":"operating profit","c":7},{"z":"税","p":"shuì","e":"tax","c":7},{"z":"增值税","p":"zēng zhí shuì","e":"value-added tax","c":7},{"z":"所得税","p":"suǒ dé shuì","e":"income tax","c":7},{"z":"折旧","p":"zhé jiù","e":"depreciation","c":7},{"z":"摊销","p":"tān xiāo","e":"amortisation","c":7},{"z":"应收账款","p":"yìng shōu zhàng kuǎn","e":"accounts receivable","c":7},{"z":"应付账款","p":"yìng fù zhàng kuǎn","e":"accounts payable","c":7},{"z":"存货","p":"cún huò","e":"inventory","c":7},{"z":"现金流","p":"xiàn jīn liú","e":"cash flow","c":7},{"z":"预算","p":"yù suàn","e":"budget","c":7},{"z":"成本控制","p":"chéng běn kòng zhì","e":"cost control","c":7},{"z":"财务造假","p":"cái wù zào jiǎ","e":"financial fraud","c":7},{"z":"报表附注","p":"bào biǎo fù zhù","e":"notes to financial statements","c":7},{"z":"年报","p":"nián bào","e":"annual report","c":7},{"z":"中报","p":"zhōng bào","e":"interim report","c":7},{"z":"监管","p":"jiān guǎn","e":"regulation; supervision","c":8},{"z":"监管机构","p":"jiān guǎn jī gòu","e":"regulator","c":8},{"z":"合规","p":"hé guī","e":"compliance","c":8},{"z":"违规","p":"wéi guī","e":"violation","c":8},{"z":"处罚","p":"chǔ fá","e":"penalty","c":8},{"z":"牌照","p":"pái zhào","e":"licence","c":8},{"z":"资质","p":"zī zhì","e":"qualification","c":8},{"z":"持牌机构","p":"chí pái jī gòu","e":"licensed institution","c":8},{"z":"反洗钱","p":"fǎn xǐ qián","e":"anti-money laundering","c":8},{"z":"客户身份识别","p":"kè hù shēn fèn shí bié","e":"customer due diligence","c":8},{"z":"信息披露","p":"xìn xī pī lù","e":"information disclosure","c":8},{"z":"内幕交易","p":"nèi mù jiāo yì","e":"insider trading","c":8},{"z":"操纵市场","p":"cāo zòng shì chǎng","e":"market manipulation","c":8},{"z":"关联交易","p":"guān lián jiāo yì","e":"related-party transaction","c":8},{"z":"关联方","p":"guān lián fāng","e":"related party","c":8},{"z":"尽职调查","p":"jìn zhí diào chá","e":"due diligence","c":8},{"z":"内部控制","p":"nèi bù kòng zhì","e":"internal control","c":8},{"z":"风控","p":"fēng kòng","e":"risk control","c":8},{"z":"备案","p":"bèi àn","e":"to file (with a regulator)","c":8},{"z":"行政处罚","p":"xíng zhèng chǔ fá","e":"administrative penalty","c":8},{"z":"罚款","p":"fá kuǎn","e":"fine","c":8},{"z":"责令整改","p":"zé lìng zhěng gǎi","e":"order to rectify","c":8},{"z":"自查","p":"zì chá","e":"self-inspection","c":8},{"z":"整改","p":"zhěng gǎi","e":"to rectify","c":8},{"z":"合同","p":"hé tóng","e":"contract","c":9},{"z":"签订合同","p":"qiān dìng hé tóng","e":"to sign a contract","c":9},{"z":"条款","p":"tiáo kuǎn","e":"clause","c":9},{"z":"违约方","p":"wéi yuē fāng","e":"the breaching party","c":9},{"z":"履约","p":"lǚ yuē","e":"to perform a contract","c":9},{"z":"报价","p":"bào jià","e":"quotation","c":9},{"z":"招标","p":"zhāo biāo","e":"to invite tenders","c":9},{"z":"投标","p":"tóu biāo","e":"to bid; bid","c":9},{"z":"中标","p":"zhòng biāo","e":"to win a bid","c":9},{"z":"谈判","p":"tán pàn","e":"negotiation","c":9},{"z":"议价","p":"yì jià","e":"price negotiation","c":9},{"z":"佣金","p":"yōng jīn","e":"commission","c":9},{"z":"折扣","p":"zhé kòu","e":"discount","c":9},{"z":"定金","p":"dìng jīn","e":"earnest money; deposit","c":9},{"z":"违约金","p":"wéi yuē jīn","e":"liquidated damages","c":9},{"z":"发票","p":"fā piào","e":"invoice","c":9},{"z":"收据","p":"shōu jù","e":"receipt","c":9},{"z":"订单","p":"dìng dān","e":"order","c":9},{"z":"交货","p":"jiāo huò","e":"delivery","c":9},{"z":"供应链","p":"gōng yìng liàn","e":"supply chain","c":9},{"z":"采购","p":"cǎi gòu","e":"procurement","c":9},{"z":"经销","p":"jīng xiāo","e":"distribution","c":9},{"z":"代理","p":"dài lǐ","e":"agent; agency","c":9},{"z":"合资","p":"hé zī","e":"joint venture","c":9},{"z":"并购","p":"bìng gòu","e":"merger and acquisition","c":9},{"z":"重组","p":"chóng zǔ","e":"restructuring","c":9},{"z":"股权","p":"gǔ quán","e":"equity; shareholding","c":9},{"z":"章程","p":"zhāng chéng","e":"articles of association","c":9},{"z":"董事会","p":"dǒng shì huì","e":"board of directors","c":9},{"z":"股东大会","p":"gǔ dōng dà huì","e":"shareholders' meeting","c":9}];
+const CATS  = [{"zh":"银行与账户","en":"Banking & Accounts"},{"zh":"支付与结算","en":"Payments & Settlement"},{"zh":"存款与贷款","en":"Deposits & Loans"},{"zh":"利率与汇率","en":"Interest Rates & Foreign Exchange"},{"zh":"证券与投资","en":"Securities & Investment"},{"zh":"债券与基金","en":"Bonds & Funds"},{"zh":"保险与风险","en":"Insurance & Risk"},{"zh":"公司财务与报表","en":"Corporate Finance & Statements"},{"zh":"监管与合规","en":"Regulation & Compliance"},{"zh":"商务通用","en":"General Business"}];
+
+const $ = s => document.querySelector(s);
+const out = $('#out'), chips = $('#chips'), q = $('#q');
+let curCat = -1, curMode = 'list', cardIdx = 0, view = TERMS.slice();
+
+$('#total').textContent = TERMS.length;
+$('#cats').textContent = CATS.length;
+
+// 分类按钮
+const all = document.createElement('button');
+all.className = 'chip on'; all.textContent = '全部'; all.dataset.c = '-1';
+chips.appendChild(all);
+CATS.forEach((c, i) => {
+  const b = document.createElement('button');
+  b.className = 'chip'; b.dataset.c = String(i);
+  b.textContent = c.zh + ' ' + c.en;
+  chips.appendChild(b);
+});
+chips.addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  curCat = Number(b.dataset.c);
+  chips.querySelectorAll('.chip').forEach(x => x.classList.toggle('on', x === b));
+  apply();
+});
+
+q.addEventListener('input', apply);
+
+document.querySelector('.modes').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  curMode = b.dataset.m;
+  document.querySelectorAll('.modes button').forEach(x => x.classList.toggle('on', x === b));
+  apply();
+});
+$('#print').addEventListener('click', () => window.print());
+
+function apply() {
+  const k = q.value.trim().toLowerCase();
+  view = TERMS.filter(t => {
+    if (curCat >= 0 && t.c !== curCat) return false;
+    if (!k) return true;
+    return t.z.includes(k) || t.p.toLowerCase().includes(k) || t.e.toLowerCase().includes(k);
+  });
+  cardIdx = 0;
+  $('#count').textContent = view.length + ' / ' + TERMS.length + ' 条';
+  render();
+}
+
+function render() {
+  if (curMode === 'list') renderList(); else renderCard();
+}
+
+function renderList() {
+  if (!view.length) { out.innerHTML = '<div class="empty">没有匹配的条目</div>'; return; }
+  let html = '<table><thead><tr><th style="width:26%">术语</th><th style="width:24%">拼音</th><th>英文</th><th style="width:18%">板块</th></tr></thead><tbody>';
+  let last = -1;
+  if (curCat < 0) {
+    view.forEach(t => {
+      if (t.c !== last) { last = t.c; html += '<tr class="grp"><td colspan="4">' + CATS[t.c].zh + ' ｜ ' + CATS[t.c].en + '</td></tr>'; }
+      html += row(t);
+    });
+  } else {
+    view.forEach(t => { html += row(t); });
+  }
+  html += '</tbody></table>';
+  out.innerHTML = html;
+}
+function row(t) {
+  return '<tr><td class="zh">' + t.z + '</td><td class="py">' + t.p + '</td><td class="en">' + t.e + '</td><td class="cat">' + CATS[t.c].zh + '</td></tr>';
+}
+
+function renderCard() {
+  if (!view.length) { out.innerHTML = '<div class="empty">没有匹配的条目</div>'; return; }
+  if (cardIdx >= view.length) cardIdx = 0;
+  if (cardIdx < 0) cardIdx = view.length - 1;
+  const t = view[cardIdx];
+  out.innerHTML =
+    '<div class="cardwrap">' +
+      '<div class="card" id="card"><div class="inner">' +
+        '<div class="face front"><div class="big">' + t.z + '</div><div class="hint">点击翻面 · 空格也可以</div></div>' +
+        '<div class="face back"><div class="pybig">' + t.p + '</div><div class="enbig">' + t.e + '</div><div class="zhsm">' + CATS[t.c].zh + '</div><div class="hint">点击返回正面</div></div>' +
+      '</div></div>' +
+      '<div class="nav">' +
+        '<button class="btn" id="prev">上一张</button>' +
+        '<span class="idx">' + (cardIdx + 1) + ' / ' + view.length + '</span>' +
+        '<button class="btn" id="next">下一张</button>' +
+      '</div>' +
+      '<div style="color:var(--ink3);font-size:12.5px">方向键 ← → 可翻页</div>' +
+    '</div>';
+  const card = $('#card');
+  card.addEventListener('click', () => card.classList.toggle('flip'));
+  $('#prev').addEventListener('click', () => { cardIdx--; renderCard(); });
+  $('#next').addEventListener('click', () => { cardIdx++; renderCard(); });
+}
+
+document.addEventListener('keydown', e => {
+  if (curMode !== 'card') return;
+  if (e.key === 'ArrowLeft') { cardIdx--; renderCard(); }
+  if (e.key === 'ArrowRight') { cardIdx++; renderCard(); }
+  if (e.key === ' ') { const c = $('#card'); if (c) { c.classList.toggle('flip'); e.preventDefault(); } }
+});
+
+apply();
+</script>
+</body>
+</html>
