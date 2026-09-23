@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--
+  教案示意图 · 商务中文 第 1 课「第一次见面」—— 作品集版（GitHub Pages）
+  版面规范来源：cathrynlavery/diagram-design（MIT）——自包含 HTML+SVG / 静态无脚本 / 无阴影 /
+  1px 发丝边 / 零圆角（避 generic rounded boxes）/ 单一强调色（1-2 个焦点）/ 4px 网格 / 无远程资源与 @import。
+  实现要点：CSS 变量只经 class 生效——SVG 的**表现属性不支持 var()**，故全部色与字体走 class。
+  内容来源：20-商务中文课程体系与教案库.md §4.1。
+  2026-09-23 发布前订正两处（均由二创核对发现）：
+    ① 句卡第 3 句中文漏「的」——原「这是我名片。」与拼音 Zhè shì wǒ de míngpiàn. 不符 → 改「这是我的名片。」
+    ② 比例带 ④ 段宽度错标——1 分钟＝8px 的规则下 ④（0:40–0:55，15 分钟）应为 120px，
+       原写 160px 会与 ⑤ 段重叠 40px → 已改为 120px，④ 段标签同步移到 x=428。
+  拼音原则：按本调标注，变调与轻声另注（与 17 §A/§C 口径一致）。
+  日期：2026-09-23 ｜ 岗位：教学产品官
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Business Chinese Lesson 1 (First Meeting): a 60-minute lesson structure for adult beginners — addressing people, name cards and leave-taking. 商务中文第 1 课教案示意图。">
+<title>Lesson 1 · First Meeting ｜ 商务中文 第 1 课 教案示意图</title>
+<style>
+  :root{
+    --paper:#FAF9F7; --card:#FFFFFF; --ink:#1A1A1A; --muted:#6B7A8F;
+    --accent:#EB6C36; --hair:#D8D5D0; --on-accent:#FFFFFF;
+    --f-title:Georgia,"Times New Roman","Songti SC","SimSun",serif;
+    --f-sans:"Segoe UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+    --f-mono:Consolas,"Courier New",monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#14161A; --card:#1B1F24; --ink:#F2F1EE; --muted:#93A1B4;
+      --accent:#F08050; --hair:#2C3138; --on-accent:#14161A;
+    }
+  }
+  html,body{margin:0;padding:0;background:var(--paper);}
+  body{padding:24px;}
+  .sheet{max-width:960px;margin:0 auto;}
+  svg{width:100%;height:auto;display:block;}
+  a{text-decoration:none;}
+
+  /* 色与字体：一律走 class（表现属性不支持 var()） */
+  .s-paper{fill:var(--paper)}
+  .s-card{fill:var(--card);stroke:var(--hair);stroke-width:1}
+  .s-accent{fill:var(--accent)}
+  .s-accent-box{fill:var(--accent);stroke:var(--accent);stroke-width:1}
+  .s-hair{stroke:var(--hair);stroke-width:1}
+
+  .t-title{font-family:var(--f-title);font-size:40px;fill:var(--ink)}
+  .t-sub{font-family:var(--f-sans);font-size:15px;fill:var(--muted)}
+  .t-mini{font-family:var(--f-mono);font-size:12px;letter-spacing:1.5px;fill:var(--muted)}
+  .t-time{font-family:var(--f-mono);font-size:12.5px;fill:var(--muted)}
+  .t-name{font-family:var(--f-sans);font-size:16px;font-weight:700;fill:var(--ink)}
+  .t-name-a{font-family:var(--f-sans);font-size:16px;font-weight:700;fill:var(--accent)}
+  .t-desc{font-family:var(--f-sans);font-size:13px;fill:var(--muted)}
+  .t-band{font-family:var(--f-sans);font-size:13px;fill:var(--ink)}
+  .t-band-on{font-family:var(--f-sans);font-size:13px;fill:var(--on-accent)}
+  .t-card{font-family:var(--f-sans);font-size:17px;font-weight:700;fill:var(--ink)}
+  .t-card-py{font-family:var(--f-mono);font-size:13px;fill:var(--muted)}
+  .t-card-note{font-family:var(--f-sans);font-size:12.5px;fill:var(--muted)}
+  .t-card-flat{font-family:var(--f-sans);font-size:12.5px;fill:var(--accent)}
+  .t-warn{font-family:var(--f-sans);font-size:13px;font-weight:700;fill:var(--ink)}
+  .t-warn-note{font-family:var(--f-sans);font-size:12px;fill:var(--muted)}
+  .t-cn{font-family:var(--f-sans);font-size:15px;fill:var(--ink)}
+  .t-py{font-family:var(--f-mono);font-size:13px;fill:var(--muted)}
+  .t-foot{font-family:var(--f-mono);font-size:11px;fill:var(--muted)}
+  .t-link{font-family:var(--f-mono);font-size:11px;fill:var(--accent)}
+</style>
+</head>
+<body>
+<div class="sheet">
+<svg viewBox="0 0 960 1040" role="img" aria-label="Business Chinese Lesson 1 First Meeting — 60-minute five-stage structure, three ways to address someone, and five target sentences. 商务中文第 1 课：60 分钟五段结构、称呼三公式、本课五句句卡">
+  <rect class="s-paper" x="0" y="0" width="960" height="1040"/>
+
+  <!-- ===== 页眉 ===== -->
+  <text class="t-title" x="48" y="64">第 1 课 · 第一次见面</text>
+  <text class="t-sub" x="48" y="96">Lesson 1 · First Meeting — addressing people, name cards, leave-taking　｜　商务中文 · 单课 60 分钟　｜　模块一 · 建立关系</text>
+  <line class="s-hair" x1="48" y1="124" x2="912" y2="124"/>
+
+  <!-- ===== 左栏 · 60 分钟五段结构 ===== -->
+  <text class="t-mini" x="48" y="164">60 MIN · 五段结构</text>
+
+  <!-- 比例带：1 分钟 = 8px，合计 480px（5/15/20/15/5 分钟 → 40/120/160/120/40，全为 4 的倍数） -->
+  <rect class="s-card"     x="48"  y="180" width="40"  height="32"/>
+  <rect class="s-card"     x="88"  y="180" width="120" height="32"/>
+  <rect class="s-card"     x="208" y="180" width="160" height="32"/>
+  <rect class="s-accent-box" x="368" y="180" width="120" height="32"/>
+  <rect class="s-card"     x="488" y="180" width="40"  height="32"/>
+  <text class="t-band"    x="68"  y="200" text-anchor="middle">①</text>
+  <text class="t-band"    x="148" y="200" text-anchor="middle">②</text>
+  <text class="t-band"    x="288" y="200" text-anchor="middle">③</text>
+  <text class="t-band-on" x="428" y="200" text-anchor="middle">④</text>
+  <text class="t-band"    x="508" y="200" text-anchor="middle">⑤</text>
+
+  <line class="s-hair" x1="48" y1="296" x2="528" y2="296"/>
+  <line class="s-hair" x1="48" y1="356" x2="528" y2="356"/>
+  <line class="s-hair" x1="48" y1="416" x2="528" y2="416"/>
+  <line class="s-hair" x1="48" y1="476" x2="528" y2="476"/>
+  <line class="s-hair" x1="48" y1="536" x2="528" y2="536"/>
+
+  <text class="t-time" x="48"  y="256">0:00–0:05</text>
+  <text class="t-name" x="144" y="256">① 暖场与复盘</text>
+  <text class="t-desc" x="144" y="278">自我介绍（慢速）＋ 问一句：同事怎么叫你？</text>
+
+  <text class="t-time" x="48"  y="316">0:05–0:20</text>
+  <text class="t-name" x="144" y="316">② 场景导入</text>
+  <text class="t-desc" x="144" y="338">先演笨拙版，再演得体版（5 句全用）</text>
+
+  <text class="t-time" x="48"  y="376">0:20–0:40</text>
+  <text class="t-name" x="144" y="376">③ 分步操练</text>
+  <text class="t-desc" x="144" y="398">机械：给词连句　｜　意义：身份卡选您／你</text>
+
+  <!-- 焦点：④ 真实任务 -->
+  <rect class="s-accent" x="44"  y="424" width="4" height="44"/>
+  <text class="t-time"   x="48"  y="436">0:40–0:55</text>
+  <text class="t-name-a" x="144" y="436">④ 真实任务</text>
+  <text class="t-desc"   x="144" y="458">递名片 → 问称呼 → 叫出称呼 → 道别</text>
+
+  <text class="t-time" x="48"  y="496">0:55–1:00</text>
+  <text class="t-name" x="144" y="496">⑤ 复盘与布置</text>
+  <text class="t-desc" x="144" y="518">回顾 5 句，发句卡与纠错单，布置作业</text>
+
+  <text class="t-desc" x="48" y="576">学员说话时间 ≥ 50%　·　教师退后，只记不错处</text>
+
+  <!-- ===== 右栏 · 称呼三公式 ===== -->
+  <text class="t-mini" x="560" y="164">称呼三公式 · 本课干货</text>
+
+  <rect class="s-card" x="560" y="180" width="352" height="104"/>
+  <text class="t-card"    x="584" y="216">姓 ＋ 职位</text>
+  <text class="t-card-py" x="584" y="244">王经理 ／ 李总</text>
+  <text class="t-card-flat" x="584" y="268">职场万能 —— 拿不准就用它</text>
+
+  <rect class="s-card" x="560" y="300" width="352" height="104"/>
+  <text class="t-card"     x="584" y="336">小 ＋ 姓 ／ 老 ＋ 姓</text>
+  <text class="t-card-py"  x="584" y="364">小王 ／ 老张</text>
+  <text class="t-card-note" x="584" y="388">熟人间用；由对方发起，别自己先说</text>
+
+  <rect class="s-card" x="560" y="420" width="352" height="104"/>
+  <text class="t-card"     x="584" y="456">全名 ／ 英文名</text>
+  <text class="t-card-py"  x="584" y="484">Amy ／ 张伟</text>
+  <text class="t-card-note" x="584" y="508">外企，或对方主动说「叫我 Amy 就行」</text>
+
+  <!-- 焦点：禁用项 -->
+  <rect class="s-accent" x="560" y="540" width="4"   height="56"/>
+  <rect class="s-card"   x="564" y="540" width="348" height="56"/>
+  <text class="t-warn"      x="584" y="564">避免用「先生／小姐」</text>
+  <text class="t-warn-note" x="584" y="588">在中国职场偏生硬，甚至带歧义 —— 用职务最稳</text>
+
+  <!-- ===== 页脚区 · 本课句卡 ===== -->
+  <line class="s-hair" x1="48" y1="624" x2="912" y2="624"/>
+  <text class="t-mini" x="48" y="660">本课句卡 · 5 句</text>
+
+  <line class="s-hair" x1="48" y1="712" x2="912" y2="712"/>
+  <line class="s-hair" x1="48" y1="748" x2="912" y2="748"/>
+  <line class="s-hair" x1="48" y1="784" x2="912" y2="784"/>
+  <line class="s-hair" x1="48" y1="820" x2="912" y2="820"/>
+
+  <text class="t-cn" x="48"  y="700">您好，请问怎么称呼您？</text>
+  <text class="t-py" x="440" y="700">Nín hǎo, qǐngwèn zěnme chēnghu nín?</text>
+
+  <text class="t-cn" x="48"  y="736">我姓王，叫我小王就行。</text>
+  <text class="t-py" x="440" y="736">Wǒ xìng Wáng, jiào wǒ Xiǎo Wáng jiù xíng.</text>
+
+  <text class="t-cn" x="48"  y="772">这是我的名片。</text>
+  <text class="t-py" x="440" y="772">Zhè shì wǒ de míngpiàn.</text>
+
+  <text class="t-cn" x="48"  y="808">很高兴认识您。</text>
+  <text class="t-py" x="440" y="808">Hěn gāoxìng rènshi nín.</text>
+
+  <text class="t-cn" x="48"  y="844">请多关照。</text>
+  <text class="t-py" x="440" y="844">Qǐng duō guānzhào.</text>
+
+  <text class="t-foot" x="48" y="880">变调与轻声另注：称呼 chēng‧hu ｜ 认识 rèn‧shi ｜ 名片 míngpiàn（2-4）｜ 小王 Xiǎo Wáng → 实读 xiáo wáng（3＋3）｜ 您好 nín＋hǎo，不涉及 3＋3</text>
+
+  <!-- ===== 页脚 · 作品集署名（公众页必须有可查的署名，见发布纪律） ===== -->
+  <line class="s-hair" x1="48" y1="936" x2="912" y2="936"/>
+  <text class="t-sub" x="48" y="964">Lesson 1 of 12　｜　60 min　｜　adult beginners　｜　Five stages: ① Warm-up ② Context ③ Drill ④ Real task ⑤ Wrap-up</text>
+  <text class="t-sub" x="48" y="990">Covered: asking how to address someone · self-introduction · name cards · greetings · leave-taking　｜　拼音按本调标注，变调与轻声另注</text>
+  <a href="https://github.com/chinesewithray" target="_blank" rel="noopener"><text class="t-link" x="48" y="1020">Designed by chinesewithray</text></a>
+  <a href="index.html"><text class="t-link" x="248" y="1020">｜ 词汇表 Business Chinese Core Vocabulary (284 terms)</text></a>
+</svg>
+</div>
+</body>
+</html>
