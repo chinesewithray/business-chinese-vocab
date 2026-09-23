@@ -4,6 +4,8 @@ A single-file, dependency-free reference of **284 essential Business Chinese ter
 
 **Open it here:** [index.html](index.html) ｜ or download and double-click — no build step, no server, no internet required.
 
+**Lesson plan:** [lesson-1-first-meeting.html](lesson-1-first-meeting.html) — Business Chinese, Lesson 1.
+
 ---
 
 ## What it is
@@ -20,6 +22,10 @@ Built for adult learners and professionals. Every entry is a term you will actua
 - **Print-friendly** — the print stylesheet strips the UI and lays out a clean word list
 - **Single file, zero dependencies** — all data is embedded; it works offline and from a USB stick
 - **Light and dark** — follows your system theme
+
+## Lesson plan
+
+[**Lesson 1 · First Meeting**](lesson-1-first-meeting.html) — a 60-minute lesson structure for adult beginners: how to address someone, exchange name cards and take leave. Five target sentences with pinyin, three ways to address a colleague, and a five-stage timing plan. Single file, zero dependencies.
 
 ## Domains
 
