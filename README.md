@@ -4,7 +4,7 @@ A single-file, dependency-free reference of **284 essential Business Chinese ter
 
 **Open it here:** [index.html](index.html) ｜ or download and double-click — no build step, no server, no internet required.
 
-**Lesson plan:** [lesson-1-first-meeting.html](lesson-1-first-meeting.html) — Business Chinese, Lesson 1.
+**Lesson plans:** [Beginner 1](beginner-1-four-tones.html) ｜ [Lesson 1](lesson-1-first-meeting.html) ｜ [Lesson 2](lesson-2-introductions.html) ｜ [Lesson 3](lesson-3-small-talk.html) ｜ [Lesson 4](lesson-4-phone-messages.html) ｜ [Lesson 5](lesson-5-wechat-email.html) — if you cannot read pinyin yet, start with **Beginner 1**.
 
 ---
 
@@ -23,9 +23,16 @@ Built for adult learners and professionals. Every entry is a term you will actua
 - **Single file, zero dependencies** — all data is embedded; it works offline and from a USB stick
 - **Light and dark** — follows your system theme
 
-## Lesson plan
+## Lesson plans
 
-[**Lesson 1 · First Meeting**](lesson-1-first-meeting.html) — a 60-minute lesson structure for adult beginners: how to address someone, exchange name cards and take leave. Five target sentences with pinyin, three ways to address a colleague, and a five-stage timing plan. Single file, zero dependencies.
+- [**Beginner 1 · Four Tones & Hello**](beginner-1-four-tones.html) — a 50-minute structure for adults with no Chinese at all: the four tones, six core words and a three-line hello. **Start here** if you cannot read pinyin yet — it is the entry point to everything else.
+- [**Lesson 1 · First Meeting**](lesson-1-first-meeting.html) — a 60-minute lesson structure for adult beginners: how to address someone, exchange name cards and take leave. Five target sentences with pinyin, three ways to address a colleague, and a five-stage timing plan.
+- [**Lesson 2 · Introductions**](lesson-2-introductions.html) — a 60-minute structure for saying who you are, what you do and introducing a colleague — with three language points and five target sentences. Prerequisite: Lesson 1.
+- [**Lesson 3 · Small Talk**](lesson-3-small-talk.html) — a 60-minute structure for the five minutes before a meeting — three safe topics, the modal particles ba/a/ne, and how to keep a conversation from dying. Prerequisite: Lessons 1-2.
+- [**Lesson 4 · Phone & Messages**](lesson-4-phone-messages.html) — a 60-minute structure for answering a call, transferring, taking a message and asking for repetition — the lesson where silence costs the most. Prerequisite: Lesson 1.
+- [**Lesson 5 · WeChat & Email**](lesson-5-wechat-email.html) — a 60-minute structure for turning a blunt order into a polite request and writing a four-line work email — four levels of politeness, 辛苦了, and first result complements. Prerequisite: Lessons 1, 4.
+
+Every lesson page is one self-contained file: a five-stage timing plan, that lesson's language points, and the target sentences with pinyin. No build step, no server, no internet — and each prints to a single page.
 
 ## Domains
 
