@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--  教案示意图 · 商务中文 第 3 课「小谈（会前 5 分钟）」—— 作品集版（GitHub Pages）
+  版面规范来源：cathrynlavery/diagram-design（MIT）——自包含 HTML+SVG / 静态无脚本 / 无阴影 /
+  1px 发丝边 / 零圆角（避 generic rounded boxes）/ 单一强调色（1-2 个焦点）/ 4px 网格 / 无远程资源与 @import。
+  实现要点：CSS 变量只经 class 生效——SVG 的**表现属性不支持 var()**，故全部色与字体走 class。
+  内容来源：20-商务中文课程体系与教案库.md §4.3（核心句式 · 语言点 · 时间轴 · 作业 · 卡点）
+  本页由 _ops/build_lesson.js 依据 _ops/data/lesson-bc-3.json 生成（勿手改产物）。
+  拼音原则：按本调标注，变调与轻声另注（与 17 §A/§C 口径一致）。
+  日期：2026-09-27 ｜ 岗位：教学产品官-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Business Chinese Lesson 3 (Small talk): a 60-minute structure for the five minutes before a meeting — safe topics, modal particles and keeping the conversation alive. 商务中文第 3 课教案示意图。">
+<title>Lesson 3 · Small Talk ｜ 商务中文 第 3 课 教案示意图</title>
+<style>
+  :root{
+    --paper:#FAF9F7; --card:#FFFFFF; --ink:#1A1A1A; --muted:#6B7A8F;
+    --accent:#EB6C36; --hair:#D8D5D0; --on-accent:#FFFFFF;
+    --f-title:Georgia,"Times New Roman","Songti SC","SimSun",serif;
+    --f-sans:"Segoe UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+    --f-mono:Consolas,"Courier New",monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#14161A; --card:#1B1F24; --ink:#F2F1EE; --muted:#93A1B4;
+      --accent:#F08050; --hair:#2C3138; --on-accent:#14161A;
+    }
+  }
+  html,body{margin:0;padding:0;background:var(--paper);}
+  body{padding:24px;}
+  .sheet{max-width:960px;margin:0 auto;}
+  svg{width:100%;height:auto;display:block;}
+  a{text-decoration:none;}
+
+  /* 色与字体：一律走 class（表现属性不支持 var()） */
+  .s-paper{fill:var(--paper)}
+  .s-card{fill:var(--card);stroke:var(--hair);stroke-width:1}
+  .s-accent{fill:var(--accent)}
+  .s-accent-box{fill:var(--accent);stroke:var(--accent);stroke-width:1}
+  .s-hair{stroke:var(--hair);stroke-width:1}
+
+  .t-title{font-family:var(--f-title);font-size:40px;fill:var(--ink)}
+  .t-sub{font-family:var(--f-sans);font-size:15px;fill:var(--muted)}
+  .t-mini{font-family:var(--f-mono);font-size:12px;letter-spacing:1.5px;fill:var(--muted)}
+  .t-time{font-family:var(--f-mono);font-size:12.5px;fill:var(--muted)}
+  .t-name{font-family:var(--f-sans);font-size:16px;font-weight:700;fill:var(--ink)}
+  .t-name-a{font-family:var(--f-sans);font-size:16px;font-weight:700;fill:var(--accent)}
+  .t-desc{font-family:var(--f-sans);font-size:13px;fill:var(--muted)}
+  .t-band{font-family:var(--f-sans);font-size:13px;fill:var(--ink)}
+  .t-band-on{font-family:var(--f-sans);font-size:13px;fill:var(--on-accent)}
+  .t-card{font-family:var(--f-sans);font-size:17px;font-weight:700;fill:var(--ink)}
+  .t-card-py{font-family:var(--f-mono);font-size:13px;fill:var(--muted)}
+  .t-card-note{font-family:var(--f-sans);font-size:12.5px;fill:var(--muted)}
+  .t-card-flat{font-family:var(--f-sans);font-size:12.5px;fill:var(--accent)}
+  .t-warn{font-family:var(--f-sans);font-size:13px;font-weight:700;fill:var(--ink)}
+  .t-warn-note{font-family:var(--f-sans);font-size:12px;fill:var(--muted)}
+  .t-cn{font-family:var(--f-sans);font-size:15px;fill:var(--ink)}
+  .t-py{font-family:var(--f-mono);font-size:13px;fill:var(--muted)}
+  .t-en{font-family:var(--f-sans);font-size:12.5px;fill:var(--muted)}
+  .t-foot{font-family:var(--f-mono);font-size:11px;fill:var(--muted)}
+  .t-link{font-family:var(--f-mono);font-size:11px;fill:var(--accent)}
+</style>
+</head>
+<body>
+<div class="sheet">
+<svg viewBox="0 0 960 1086" role="img" aria-label="Business Chinese Lesson 3 Small Talk — 60-minute five-stage structure, three language points and five target sentences. 商务中文第 3 课：安全三话题、语气助词、不聊清单">
+  <rect class="s-paper" x="0" y="0" width="960" height="1086"/>
+
+  <!-- ===== 页眉 ===== -->
+  <text class="t-title" x="48" y="64">第 3 课 · 小谈（会前 5 分钟）</text>
+  <text class="t-sub" x="48" y="96">Lesson 3 · Small Talk — safe topics, modal particles, keep it alive　｜　商务中文 · 先修：第 1、2 课</text>
+  <line class="s-hair" x1="48" y1="124" x2="912" y2="124"/>
+
+  <!-- ===== 左栏 · 60 MIN · 五段结构 ===== -->
+  <text class="t-mini" x="48" y="164">60 MIN · 五段结构</text>
+
+  <!-- 比例带：合计 480px；本课合计 60 分钟 → 1 分钟 = 8px（各段宽度如下，均为 4 的倍数） -->
+  <rect class="s-card" x="48" y="180" width="40" height="32"/>
+  <rect class="s-card" x="88" y="180" width="120" height="32"/>
+  <rect class="s-accent-box" x="208" y="180" width="160" height="32"/>
+  <rect class="s-card" x="368" y="180" width="120" height="32"/>
+  <rect class="s-card" x="488" y="180" width="40" height="32"/>
+  <text class="t-band" x="68" y="200" text-anchor="middle">①</text>
+  <text class="t-band" x="148" y="200" text-anchor="middle">②</text>
+  <text class="t-band-on" x="288" y="200" text-anchor="middle">③</text>
+  <text class="t-band" x="428" y="200" text-anchor="middle">④</text>
+  <text class="t-band" x="508" y="200" text-anchor="middle">⑤</text>
+
+  <line class="s-hair" x1="48" y1="296" x2="528" y2="296"/>
+  <line class="s-hair" x1="48" y1="356" x2="528" y2="356"/>
+  <line class="s-hair" x1="48" y1="416" x2="528" y2="416"/>
+  <line class="s-hair" x1="48" y1="476" x2="528" y2="476"/>
+  <line class="s-hair" x1="48" y1="536" x2="528" y2="536"/>
+
+  <text class="t-time" x="48" y="256">0:00–0:05</text>
+  <text class="t-name" x="144" y="256">① 暖场与复习</text>
+  <text class="t-desc" x="144" y="278">用第 2 课句式问「你这周介绍过谁？」</text>
+
+  <text class="t-time" x="48" y="316">0:05–0:20</text>
+  <text class="t-name" x="144" y="316">② 场景导入</text>
+  <text class="t-desc" x="144" y="338">先演冷场 5 秒，再演小谈版 → 引出 5 句</text>
+
+  <!-- 焦点：③ 分步操练 -->
+  <rect class="s-accent" x="44" y="364" width="4" height="44"/>
+  <text class="t-time" x="48" y="376">0:20–0:40</text>
+  <text class="t-name-a" x="144" y="376">③ 分步操练</text>
+  <text class="t-desc" x="144" y="398">机械：场景卡说寒暄｜意义：给生硬句加助词</text>
+
+  <text class="t-time" x="48" y="436">0:40–0:55</text>
+  <text class="t-name" x="144" y="436">④ 真实任务</text>
+  <text class="t-desc" x="144" y="458">两两一组 3 分钟小谈；教师只回短句逼追问</text>
+
+  <text class="t-time" x="48" y="496">0:55–1:00</text>
+  <text class="t-name" x="144" y="496">⑤ 复盘与布置</text>
+  <text class="t-desc" x="144" y="518">回顾 5 句；点名「不聊清单」；发句卡</text>
+
+  <text class="t-desc" x="48" y="576">学员说话时间 ≥ 50%　·　冷场时用万能接话「是吗？」＋追问，不靠临场发挥</text>
+
+  <!-- ===== 右栏 · 三个语言点 · 本课干货 ===== -->
+  <text class="t-mini" x="560" y="164">三个语言点 · 本课干货</text>
+
+  <rect class="s-card" x="560" y="180" width="352" height="104"/>
+  <text class="t-card" x="584" y="216">语气助词 吧 ／ 啊 ／ 呢</text>
+  <text class="t-card-py" x="584" y="244">我们进去吧｜今天挺冷啊｜我很好，您呢？</text>
+  <text class="t-card-flat" x="584" y="268">一个助词都不用，句子听起来像审问</text>
+
+  <rect class="s-card" x="560" y="300" width="352" height="104"/>
+  <text class="t-card" x="584" y="336">寒暄的安全三话题</text>
+  <text class="t-card-py" x="584" y="364">天气 → 交通／路程 → 初次来访</text>
+  <text class="t-card-note" x="584" y="388">这三个在中国职场永远安全</text>
+
+  <rect class="s-card" x="560" y="420" width="352" height="104"/>
+  <text class="t-card" x="584" y="456">不聊清单</text>
+  <text class="t-card-py" x="584" y="484">收入、年龄、婚姻、政治、宗教</text>
+  <text class="t-card-note" x="584" y="508">不是禁忌，是不熟时不问——用「时机」解释</text>
+
+  <!-- 焦点：禁用项 -->
+  <rect class="s-accent" x="560" y="540" width="4" height="56"/>
+  <rect class="s-card" x="564" y="540" width="348" height="56"/>
+  <text class="t-warn" x="584" y="564">一个语气助词都不加</text>
+  <text class="t-warn-note" x="584" y="588">不加＝像审问；加一个「啊／呢」冷硬感少一半</text>
+
+  <!-- ===== 页脚区 · 本课句卡 · 5 句 ===== -->
+  <line class="s-hair" x1="48" y1="624" x2="912" y2="624"/>
+  <text class="t-mini" x="48" y="660">本课句卡 · 5 句</text>
+
+  <text class="t-cn" x="48" y="700">今天天气不错。</text>
+  <text class="t-py" x="440" y="700">Jīntiān tiānqì búcuò.</text>
+  <line class="s-hair" x1="48" y1="712" x2="912" y2="712"/>
+
+  <text class="t-cn" x="48" y="736">路上还顺利吗？</text>
+  <text class="t-py" x="440" y="736">Lùshang hái shùnlì ma?</text>
+  <line class="s-hair" x1="48" y1="748" x2="912" y2="748"/>
+
+  <text class="t-cn" x="48" y="772">您以前来过芜湖吗？</text>
+  <text class="t-py" x="440" y="772">Nín yǐqián lái guo Wúhú ma?</text>
+  <line class="s-hair" x1="48" y1="784" x2="912" y2="784"/>
+
+  <text class="t-cn" x="48" y="808">不好意思，让您久等了。</text>
+  <text class="t-py" x="440" y="808">Bù hǎoyìsi, ràng nín jiǔ děng le.</text>
+  <line class="s-hair" x1="48" y1="820" x2="912" y2="820"/>
+
+  <text class="t-cn" x="48" y="844">您先坐，我去倒杯茶。</text>
+  <text class="t-py" x="440" y="844">Nín xiān zuò, wǒ qù dào bēi chá.</text>
+
+  <text class="t-foot" x="48" y="880">变调另注：「不错」búcuò（不 在四声前变二声）｜ 路上 lùshang（上 轻声）｜ 以前 yǐqián（3-2）</text>
+  <text class="t-foot" x="48" y="902">久等 jiǔ děng（3＋3 → 实际读 jiú děng）｜ 倒茶 dào chá（4-2）</text>
+
+  <!-- ===== 页脚 · 作品集署名（公众页必须有可查的署名，见发布纪律） ===== -->
+  <line class="s-hair" x1="48" y1="958" x2="912" y2="958"/>
+  <text class="t-sub" x="48" y="986">Lesson 3 of 12　｜　60 min　｜　adult beginners　｜　Five stages: ① Warm-up ② Context ③ Drill ④ Real task ⑤ Wrap-up</text>
+  <text class="t-sub" x="48" y="1012">Covered: safe topics · modal particles 吧／啊／呢 · what not to ask　｜　拼音按本调标注，变调与轻声另注</text>
+  <a href="https://github.com/chinesewithray" target="_blank" rel="noopener"><text class="t-link" x="48" y="1042">Designed by chinesewithray</text></a>
+  <a href="index.html"><text class="t-link" x="248" y="1042">｜ 词汇表 Business Chinese Core Vocabulary (284 terms)</text></a>
+  <a href="lesson-2-introductions.html"><text class="t-link" x="48" y="1066">｜ 商务中文 · 第 2 课 自我介绍</text></a>
+  <a href="lesson-4-phone-messages.html"><text class="t-link" x="300" y="1066">｜ 商务中文 · 第 4 课 电话与留言</text></a>
+</svg>
+</div>
+</body>
+</html>
