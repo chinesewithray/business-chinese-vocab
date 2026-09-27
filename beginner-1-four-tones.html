@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--  教案示意图 · 成人零基础 第 1 课「四个声调与第一次开口」—— 作品集版（GitHub Pages）
+  版面规范来源：cathrynlavery/diagram-design（MIT）——自包含 HTML+SVG / 静态无脚本 / 无阴影 /
+  1px 发丝边 / 零圆角（避 generic rounded boxes）/ 单一强调色（1-2 个焦点）/ 4px 网格 / 无远程资源与 @import。
+  实现要点：CSS 变量只经 class 生效——SVG 的**表现属性不支持 var()**，故全部色与字体走 class。
+  内容来源：17-教学教案与微课脚本.md §A（教学目标 · 时间轴 · 课堂用语 · 互动设计 · 卡点应对）
+  本页由 _ops/build_lesson.js 依据 _ops/data/lesson-zero-1.json 生成（勿手改产物）。
+  拼音原则：按本调标注，变调与轻声另注（与 17 §A/§C 口径一致）。
+  日期：2026-09-27 ｜ 岗位：教学产品官-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Absolute Beginners Lesson 1: the four tones, six core words and a three-line hello — a 50-minute five-stage structure for adults with no Chinese at all. 成人零基础第 1 课教案示意图。">
+<title>Beginner 1 · Four Tones &amp; Hello ｜ 成人零基础 第 1 课 教案示意图</title>
+<style>
+  :root{
+    --paper:#FAF9F7; --card:#FFFFFF; --ink:#1A1A1A; --muted:#6B7A8F;
+    --accent:#EB6C36; --hair:#D8D5D0; --on-accent:#FFFFFF;
+    --f-title:Georgia,"Times New Roman","Songti SC","SimSun",serif;
+    --f-sans:"Segoe UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+    --f-mono:Consolas,"Courier New",monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#14161A; --card:#1B1F24; --ink:#F2F1EE; --muted:#93A1B4;
+      --accent:#F08050; --hair:#2C3138; --on-accent:#14161A;
+    }
+  }
+  html,body{margin:0;padding:0;background:var(--paper);}
+  body{padding:24px;}
+  .sheet{max-width:960px;margin:0 auto;}
+  svg{width:100%;height:auto;display:block;}
+  a{text-decoration:none;}
+
+  /* 色与字体：一律走 class（表现属性不支持 var()） */
+  .s-paper{fill:var(--paper)}
+  .s-card{fill:var(--card);stroke:var(--hair);stroke-width:1}
+  .s-accent{fill:var(--accent)}
+  .s-accent-box{fill:var(--accent);stroke:var(--accent);stroke-width:1}
+  .s-hair{stroke:var(--hair);stroke-width:1}
+
+  .t-title{font-family:var(--f-title);font-size:40px;fill:var(--ink)}
+  .t-sub{font-family:var(--f-sans);font-size:15px;fill:var(--muted)}
+  .t-mini{font-family:var(--f-mono);font-size:12px;letter-spacing:1.5px;fill:var(--muted)}
+  .t-time{font-family:var(--f-mono);font-size:12.5px;fill:var(--muted)}
+  .t-name{font-family:var(--f-sans);font-size:16px;font-weight:700;fill:var(--ink)}
+  .t-name-a{font-family:var(--f-sans);font-size:16px;font-weight:700;fill:var(--accent)}
+  .t-desc{font-family:var(--f-sans);font-size:13px;fill:var(--muted)}
+  .t-band{font-family:var(--f-sans);font-size:13px;fill:var(--ink)}
+  .t-band-on{font-family:var(--f-sans);font-size:13px;fill:var(--on-accent)}
+  .t-card{font-family:var(--f-sans);font-size:17px;font-weight:700;fill:var(--ink)}
+  .t-card-py{font-family:var(--f-mono);font-size:13px;fill:var(--muted)}
+  .t-card-note{font-family:var(--f-sans);font-size:12.5px;fill:var(--muted)}
+  .t-card-flat{font-family:var(--f-sans);font-size:12.5px;fill:var(--accent)}
+  .t-warn{font-family:var(--f-sans);font-size:13px;font-weight:700;fill:var(--ink)}
+  .t-warn-note{font-family:var(--f-sans);font-size:12px;fill:var(--muted)}
+  .t-cn{font-family:var(--f-sans);font-size:15px;fill:var(--ink)}
+  .t-py{font-family:var(--f-mono);font-size:13px;fill:var(--muted)}
+  .t-en{font-family:var(--f-sans);font-size:12.5px;fill:var(--muted)}
+  .t-foot{font-family:var(--f-mono);font-size:11px;fill:var(--muted)}
+  .t-link{font-family:var(--f-mono);font-size:11px;fill:var(--accent)}
+</style>
+</head>
+<body>
+<div class="sheet">
+<svg viewBox="0 0 960 1122" role="img" aria-label="Absolute beginners Lesson 1 — the four tones, six core words and a three-line greeting, in a 50-minute five-stage structure. 成人零基础第 1 课：四声、6 个核心词、3 句开场白">
+  <rect class="s-paper" x="0" y="0" width="960" height="1122"/>
+
+  <!-- ===== 页眉 ===== -->
+  <text class="t-title" x="48" y="64">零基础 第 1 课 · 四声与问候</text>
+  <text class="t-sub" x="48" y="96">Beginner Track · Lesson 1 — the four tones, six core words, a three-line hello　｜　成人零基础 · 50 分钟 · 先修：无</text>
+  <line class="s-hair" x1="48" y1="124" x2="912" y2="124"/>
+
+  <!-- ===== 左栏 · 50 MIN · 五段结构 ===== -->
+  <text class="t-mini" x="48" y="164">50 MIN · 五段结构</text>
+
+  <!-- 比例带：合计 480px；本课合计 50 分钟 → 1 分钟 = 9.6px（各段宽度如下，均为 4 的倍数） -->
+  <rect class="s-card" x="48" y="180" width="48" height="32"/>
+  <rect class="s-card" x="96" y="180" width="115" height="32"/>
+  <rect class="s-card" x="211" y="180" width="173" height="32"/>
+  <rect class="s-accent-box" x="384" y="180" width="96" height="32"/>
+  <rect class="s-card" x="480" y="180" width="48" height="32"/>
+  <text class="t-band" x="72" y="200" text-anchor="middle">①</text>
+  <text class="t-band" x="154" y="200" text-anchor="middle">②</text>
+  <text class="t-band" x="298" y="200" text-anchor="middle">③</text>
+  <text class="t-band-on" x="432" y="200" text-anchor="middle">④</text>
+  <text class="t-band" x="504" y="200" text-anchor="middle">⑤</text>
+
+  <line class="s-hair" x1="48" y1="296" x2="528" y2="296"/>
+  <line class="s-hair" x1="48" y1="356" x2="528" y2="356"/>
+  <line class="s-hair" x1="48" y1="416" x2="528" y2="416"/>
+  <line class="s-hair" x1="48" y1="476" x2="528" y2="476"/>
+  <line class="s-hair" x1="48" y1="536" x2="528" y2="536"/>
+
+  <text class="t-time" x="48" y="256">0:00–0:05</text>
+  <text class="t-name" x="144" y="256">① 热身 Warm-up</text>
+  <text class="t-desc" x="144" y="278">中英双语自我介绍、说清今天的三个目标；破冰降焦虑</text>
+
+  <text class="t-time" x="48" y="316">0:05–0:17</text>
+  <text class="t-name" x="144" y="316">② 呈现 Presentation</text>
+  <text class="t-desc" x="144" y="338">手势＋嘴型引入四声；带出 6 个核心词</text>
+
+  <text class="t-time" x="48" y="376">0:17–0:35</text>
+  <text class="t-name" x="144" y="376">③ 操练 Drill</text>
+  <text class="t-desc" x="144" y="398">齐读 → 个别读 → 声调游戏；纠错不打断</text>
+
+  <!-- 焦点：④ 产出 Production -->
+  <rect class="s-accent" x="44" y="424" width="4" height="44"/>
+  <text class="t-time" x="48" y="436">0:35–0:45</text>
+  <text class="t-name-a" x="144" y="436">④ 产出 Production</text>
+  <text class="t-desc" x="144" y="458">两两配对做「新同事见面」小对话，用 3 句走一遍</text>
+
+  <text class="t-time" x="48" y="496">0:45–0:50</text>
+  <text class="t-name" x="144" y="496">⑤ 收尾 Wrap-up</text>
+  <text class="t-desc" x="144" y="518">回顾板书、布置录音作业、要一句反馈</text>
+
+  <text class="t-desc" x="48" y="576">第一课不要求写汉字　·　纠错一次只挑一处　·　目标是敢开口，不是发准音</text>
+
+  <!-- ===== 右栏 · 四声与 6 词 · 本课干货 ===== -->
+  <text class="t-mini" x="560" y="164">四声与 6 词 · 本课干货</text>
+
+  <rect class="s-card" x="560" y="180" width="352" height="104"/>
+  <text class="t-card" x="584" y="216">四个声调</text>
+  <text class="t-card-py" x="584" y="244">mā ／ má ／ mǎ ／ mà</text>
+  <text class="t-card-flat" x="584" y="268">一声平 · 二声升 · 三声拐弯 · 四声下降</text>
+
+  <rect class="s-card" x="560" y="300" width="352" height="104"/>
+  <text class="t-card" x="584" y="336">6 个核心词</text>
+  <text class="t-card-py" x="584" y="364">你好 · 谢谢 · 再见 · 老师 · 我叫 · 我很好</text>
+  <text class="t-card-note" x="584" y="388">每个词都能单独用 —— 先会拼读，暂不要求会写</text>
+
+  <rect class="s-card" x="560" y="420" width="352" height="104"/>
+  <text class="t-card" x="584" y="456">3 句就能开口</text>
+  <text class="t-card-py" x="584" y="484">你好 → 我叫__ → 我很好</text>
+  <text class="t-card-note" x="584" y="508">下课前必须能连续说完这 3 句（目标 3 的检验方式）</text>
+
+  <!-- 焦点：禁用项 -->
+  <rect class="s-accent" x="560" y="540" width="4" height="56"/>
+  <rect class="s-card" x="564" y="540" width="348" height="56"/>
+  <text class="t-warn" x="584" y="564">第一课不纠正三声变调</text>
+  <text class="t-warn-note" x="584" y="588">两个三声连读，前一个实读成二声 —— 只给听感</text>
+
+  <!-- ===== 页脚区 · 本课句卡 · 6 句 ===== -->
+  <line class="s-hair" x1="48" y1="624" x2="912" y2="624"/>
+  <text class="t-mini" x="48" y="660">本课句卡 · 6 句</text>
+
+  <text class="t-cn" x="48" y="700">你好！</text>
+  <text class="t-py" x="440" y="700">Nǐ hǎo!</text>
+  <text class="t-en" x="700" y="700">Hello!</text>
+  <line class="s-hair" x1="48" y1="712" x2="912" y2="712"/>
+
+  <text class="t-cn" x="48" y="736">谢谢。</text>
+  <text class="t-py" x="440" y="736">Xiè xie.</text>
+  <text class="t-en" x="700" y="736">Thank you.</text>
+  <line class="s-hair" x1="48" y1="748" x2="912" y2="748"/>
+
+  <text class="t-cn" x="48" y="772">再见！</text>
+  <text class="t-py" x="440" y="772">Zàijiàn!</text>
+  <text class="t-en" x="700" y="772">Goodbye!</text>
+  <line class="s-hair" x1="48" y1="784" x2="912" y2="784"/>
+
+  <text class="t-cn" x="48" y="808">我叫__。</text>
+  <text class="t-py" x="440" y="808">Wǒ jiào __.</text>
+  <text class="t-en" x="700" y="808">My name is __.</text>
+  <line class="s-hair" x1="48" y1="820" x2="912" y2="820"/>
+
+  <text class="t-cn" x="48" y="844">我很好。</text>
+  <text class="t-py" x="440" y="844">Wǒ hěn hǎo.</text>
+  <text class="t-en" x="700" y="844">I am very well.</text>
+  <line class="s-hair" x1="48" y1="856" x2="912" y2="856"/>
+
+  <text class="t-cn" x="48" y="880">很高兴认识您。</text>
+  <text class="t-py" x="440" y="880">Hěn gāoxìng rènshi nín.</text>
+  <text class="t-en" x="700" y="880">Pleased to meet you.</text>
+
+  <text class="t-foot" x="48" y="916">变调与轻声另注：谢谢 xiè xie（第二字轻声）｜ 认识 rèn‧shi（轻声）｜ 你好 nǐ hǎo → 实读 ní hǎo（3＋3）</text>
+  <text class="t-foot" x="48" y="938">我很好 wǒ hěn hǎo → 实读 wǒ hén hǎo｜第一课只给听感，不讲规则</text>
+
+  <!-- ===== 页脚 · 作品集署名（公众页必须有可查的署名，见发布纪律） ===== -->
+  <line class="s-hair" x1="48" y1="994" x2="912" y2="994"/>
+  <text class="t-sub" x="48" y="1022">Lesson 1 of 4　｜　50 min　｜　no prerequisites　｜　① Warm-up ② Presentation ③ Drill ④ Production ⑤ Wrap-up</text>
+  <text class="t-sub" x="48" y="1048">Covered: four tones · six core words · greetings · self-introduction　｜　拼音按本调标注，变调与轻声另注</text>
+  <a href="https://github.com/chinesewithray" target="_blank" rel="noopener"><text class="t-link" x="48" y="1078">Designed by chinesewithray</text></a>
+  <a href="index.html"><text class="t-link" x="248" y="1078">｜ 词汇表 Business Chinese Core Vocabulary (284 terms)</text></a>
+  <a href="lesson-1-first-meeting.html"><text class="t-link" x="48" y="1102">｜ 商务中文 · 第 1 课 第一次见面</text></a>
+  <a href="lesson-2-introductions.html"><text class="t-link" x="300" y="1102">｜ 商务中文 · 第 2 课 自我介绍与介绍他人</text></a>
+</svg>
+</div>
+</body>
+</html>
